@@ -5,29 +5,28 @@
 }
 
 :root {
-  --cinza-escuro: #1f2937;
-  --ciano: #06b6d4;
-  --azul-espacial: #0f172a;
-  --branco: #ffffff;
-  --cinza-claro: #e5e7eb;
-  --sombra: rgba(6, 182, 212, 0.2);
+  --preto: #000000;
+  --verde-escuro: #004225;
+  --verde-medio: #3A9D23;
+  --verde-claro: #A8D5BA;
+  --branco: #FFFFFF;
 }
 
 body {
   height: 100vh;
-  background-color: var(--cinza-claro);
-  color: var(--cinza-escuro);
+  background-color: var(--verde-claro);
+  color: var(--preto);
   font-size: 16px;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
   display: flex;
   width: 100%;
-  background-color: var(--azul-espacial);
+  background-color: var(--verde-escuro);
   padding: 1rem;
-  justify-content: center;
   position: relative;
+  justify-content: center;
 }
 
 .menu-disciplina {
@@ -38,17 +37,12 @@ header {
 .botao-disciplinas {
   cursor: pointer;
   font-size: 2rem;
-  background-color: var(--ciano);
+  background: none;
+  background-color: var(--preto);
   border: none;
-  padding: 1rem 1.5rem;
-  color: var(--azul-espacial);
+  padding: 1.05rem 1.5rem;
+  color: var(--verde-medio);
   border-radius: 4px;
-  transition: background 0.3s ease;
-}
-
-.botao-disciplinas:hover {
-  background-color: var(--cinza-claro);
-  color: var(--cinza-escuro);
 }
 
 #menu-toggle {
@@ -58,9 +52,9 @@ header {
 .lista-vertical {
   display: none;
   position: absolute;
-  background-color: var(--branco);
-  box-shadow: 0 4px 10px var(--sombra);
-  min-width: 200px;
+  background-color: var(--verde-medio);
+  box-shadow: 0 2px 5px var(--verde-escuro);
+  min-width: 190px;
   z-index: 1;
   left: 1rem;
   top: 100%;
@@ -68,17 +62,17 @@ header {
 }
 
 .lista-vertical a {
-  color: var(--azul-espacial);
-  padding: 1rem;
+  color: var(--branco);
+  padding: 0.75rem 1rem;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   display: block;
   text-align: center;
 }
 
 .lista-vertical a:hover {
-  background-color: var(--ciano);
-  color: var(--branco);
+  background-color: var(--branco);
+  color: var(--verde-escuro);
 }
 
 #menu-toggle:checked ~ .lista-vertical {
@@ -87,7 +81,7 @@ header {
 
 #menu-toggle:checked + .botao-disciplinas {
   background-color: var(--branco);
-  color: var(--azul-espacial);
+  color: var(--verde-escuro);
 }
 
 .links-principais {
@@ -106,12 +100,12 @@ header {
 
 .lista-horizontal a {
   text-decoration: none;
-  color: var(--ciano);
+  color: var(--verde-medio);
   transition: color 0.3s ease;
 }
 
 .lista-horizontal a:hover {
-  color: var(--branco);
+  color: var(--preto);
 }
 
 main {
@@ -121,7 +115,7 @@ main {
 
 h1 {
   text-align: center;
-  color: var(--ciano);
+  color: var(--verde-escuro);
   margin-bottom: 60px;
   font-size: 4rem;
 }
@@ -129,8 +123,9 @@ h1 {
 .biologia-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
@@ -140,61 +135,65 @@ h1 {
   padding: 30px;
   width: 80%;
   min-width: 280px;
-  box-shadow: 0 4px 16px var(--sombra);
-  border-left: 8px solid var(--ciano);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .conteudo:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 0 10px rgba(6, 182, 212, 0.15);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 0 25px rgba(0, 0, 0, 0.2);
 }
 
 .conteudo h2 {
-  text-align: center;
-  color: var(--azul-espacial);
+  display: flex;
+  justify-content: center;
+  color: var(--verde-escuro);
   margin-bottom: 15px;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+}
+
+.conteudo p {
+  line-height: 1.6;
+  color: var(--preto);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 
 .conteudo ul {
-  list-style: none;
-  font-size: 1.7rem;
-  color: var(--cinza-escuro);
+  list-style-type: none;
+  font-size: 1.8rem;
 }
 
 .conteudo ul li {
   padding: 10px 0;
-  border-bottom: 1px solid var(--cinza-claro);
+  border-bottom: 1px solid var(--verde-claro);
+  transition: transform 0.5s ease;
+  color: var(--preto);
+  position: relative;
 }
 
-.home {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 30px;
-  margin-bottom: 10px;
+.conteudo ul li:hover {
+  transform: translateX(10px);
+  color: var(--verde-escuro);
 }
 
-.home a {
-  font-size: 2.2rem;
-  color: var(--ciano);
-}
 .opacidade {
   display: block;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 1.5s ease, max-height 1.5s ease;
-  color: var(--marinho); /* ou a cor correspondente da matéria */
+  color: var(--verde-escuro);
   text-align: justify;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .conteudo ul li:hover .opacidade {
   opacity: 1;
   max-height: 320px;
-  text-align: justify;
-  color: var(--marinho);
+  color: var(--verde-escuro);
   margin-bottom: 5px;
 }
