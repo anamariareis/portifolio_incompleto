@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cinza-escuro: #1f2937;
+  --ciano: #06b6d4;
+  --azul-espacial: #0f172a;
+  --branco: #ffffff;
+  --cinza-claro: #e5e7eb;
+  --sombra: rgba(6, 182, 212, 0.2);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  font-size: 16px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  background-color: var(--azul-espacial);
+  padding: 1rem;
+  justify-content: center;
+  position: relative;
+}
+
+.menu-disciplina {
+  width: 20%;
+  display: inline-block;
+}
+
+.botao-disciplinas {
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: var(--ciano);
+  border: none;
+  padding: 1rem 1.5rem;
+  color: var(--azul-espacial);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.botao-disciplinas:hover {
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.lista-vertical {
+  display: none;
+  position: absolute;
+  background-color: var(--branco);
+  box-shadow: 0 4px 10px var(--sombra);
+  min-width: 200px;
+  z-index: 1;
+  left: 1rem;
+  top: 100%;
+  border-radius: 6px;
+}
+
+.lista-vertical a {
+  color: var(--azul-espacial);
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: block;
+  text-align: center;
+}
+
+.lista-vertical a:hover {
+  background-color: var(--ciano);
+  color: var(--branco);
+}
+
+#menu-toggle:checked ~ .lista-vertical {
+  display: block;
+}
+
+#menu-toggle:checked + .botao-disciplinas {
+  background-color: var(--branco);
+  color: var(--azul-espacial);
+}
+
+.links-principais {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-horizontal {
+  list-style: none;
+  display: flex;
+  font-size: 2rem;
+  gap: 10rem;
+}
+
+.lista-horizontal a {
+  text-decoration: none;
+  color: var(--ciano);
+  transition: color 0.3s ease;
+}
+
+.lista-horizontal a:hover {
+  color: var(--branco);
+}
+
+main {
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--ciano);
+  margin-bottom: 60px;
+  font-size: 4rem;
+}
+
+.biologia-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.conteudo {
+  background-color: var(--branco);
+  border-radius: 10px;
+  padding: 30px;
+  width: 80%;
+  min-width: 280px;
+  box-shadow: 0 4px 16px var(--sombra);
+  border-left: 8px solid var(--ciano);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conteudo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 10px rgba(6, 182, 212, 0.15);
+}
+
+.conteudo h2 {
+  text-align: center;
+  color: var(--azul-espacial);
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+}
+
+.conteudo ul {
+  list-style: none;
+  font-size: 1.7rem;
+  color: var(--cinza-escuro);
+}
+
+.conteudo ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+.home {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.home a {
+  font-size: 2.2rem;
+  color: var(--ciano);
+}
