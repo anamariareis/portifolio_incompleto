@@ -179,3 +179,22 @@ h1 {
   font-size: 2.2rem;
   color: var(--ciano);
 }
+.opacidade {
+  display: block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 1.5s ease, max-height 1.5s ease;
+  color: var(--marinho); /* ou a cor correspondente da matéria */
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+
+.conteudo ul li:hover .opacidade {
+  opacity: 1;
+  max-height: 320px;
+  text-align: justify;
+  color: var(--marinho);
+  margin-bottom: 5px;
+}
