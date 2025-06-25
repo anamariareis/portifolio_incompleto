@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --vinho: #861657;
+  --laranja: #ffa630;
+  --cinza-claro: #f9f9f9;
+  --vermelho-claro: #ffd1cf;
+  --preto: #1c1c1c;
+  --branco: #ffffff;
+  --sombra: rgba(134, 22, 87, 0.3);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--cinza-claro);
+  color: var(--preto);
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  background-color: var(--vinho);
+  padding: 1rem;
+  justify-content: center;
+  position: relative;
+}
+
+.menu-disciplina {
+  width: 20%;
+  display: inline-block;
+}
+
+.botao-disciplinas {
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: var(--laranja);
+  border: none;
+  padding: 1rem 1.5rem;
+  color: var(--preto);
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.botao-disciplinas:hover {
+  background-color: var(--vinho);
+  color: var(--branco);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.lista-vertical {
+  display: none;
+  position: absolute;
+  background-color: var(--branco);
+  box-shadow: 0 4px 12px var(--sombra);
+  min-width: 200px;
+  z-index: 1;
+  left: 1rem;
+  top: 100%;
+  border-radius: 6px;
+}
+
+.lista-vertical a {
+  color: var(--vinho);
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: block;
+  text-align: center;
+}
+
+.lista-vertical a:hover {
+  background-color: var(--laranja);
+  color: var(--branco);
+}
+
+#menu-toggle:checked ~ .lista-vertical {
+  display: block;
+}
+
+#menu-toggle:checked + .botao-disciplinas {
+  background-color: var(--vermelho-claro);
+}
+
+.links-principais {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-horizontal {
+  list-style: none;
+  display: flex;
+  font-size: 2rem;
+  gap: 10rem;
+}
+
+.lista-horizontal a {
+  text-decoration: none;
+  color: var(--laranja);
+  transition: color 0.3s ease;
+}
+
+.lista-horizontal a:hover {
+  color: var(--branco);
+}
+
+main {
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--vinho);
+  margin-bottom: 60px;
+  font-size: 4rem;
+}
+
+.biologia-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.conteudo {
+  background-color: var(--branco);
+  border-left: 10px solid var(--vinho);
+  padding: 30px;
+  width: 80%;
+  min-width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px var(--sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conteudo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 8px rgba(255, 166, 48, 0.15);
+}
+
+.conteudo h2 {
+  text-align: center;
+  color: var(--laranja);
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+}
+
+.conteudo ul {
+  list-style: none;
+  font-size: 1.7rem;
+  color: var(--preto);
+}
+
+.conteudo ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--vermelho-claro);
+}
+
+.home {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.home a {
+  font-size: 2.2rem;
+  color: var(--vinho);
+}
